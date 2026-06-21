@@ -7,7 +7,7 @@ import random
 class AhorcadoModel:
     def __init__(self):
         # 7 palabras para este avance del proyecto
-        self.lista_palabras = ["SOFTWARE", "LOGICA", "PROGRAMACION", "UIDE", "CODIGO", "INGENIERIA", "VARIABLE"]
+        self.lista_palabras = ["SOFTWARE", "LOGICA", "PROGRAMACION", "UIDE", "CODIGO", "INGENIERIA", "VARIABLE, SISTEMAS"]
         self.palabra_secreta = random.choice(self.lista_palabras)
         self.vidas_restantes = 7
         self.letras_adivinadas = []
