@@ -8,7 +8,7 @@ Este módulo contiene la planificación gráfica y estructural del proyecto prev
   * El sistema inicializa el entorno seleccionando una palabra e iniciando con un total de 7 vidas.
   * Se procesa un ciclo iterativo (bucle) por cada letra ingresada por el usuario.
   * Cuenta con bifurcaciones lógicas que validan si la letra es repetida, correcta o incorrecta.
-  * El juego finaliza bajo dos condiciones de quiebre estrictas: Victoria (`Palabra Completa`) o Derrota (`Vidas == 0`).
+  * El juego finaliza bajo dos condiciones de quiebre estrictas: Victoria (**Palabra Completa**) o Derrota (**Vidas == 0**).
 
 ## 2. Diagrama de Arquitectura con el Diseño MVC
 * **Propósito:** Separar las responsabilidades del software en tres capas independientes para garantizar un código limpio, mantenible y escalable.
