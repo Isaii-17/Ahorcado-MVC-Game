@@ -1,4 +1,4 @@
-**Lógica de Programación UIDE**
+#Lógica de Programación UIDE
 **Nombre del Proyecto:** Juego del Ahorcado Utilizando Visual Studio Code  
 **Nombre del Estudiante:** Steven Isai Caina Yanzapanta  
 **Objetivo:** Desarrollar un juego interactivo "Juego del Ahorcado" en entorno de consola utilizando Python para aplicar de forma práctica los fundamentos de la programación orientada a objetos y la utilización estructurada de flujos de datos.  
