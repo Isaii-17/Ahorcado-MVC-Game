@@ -6,8 +6,8 @@ import random
 
 class AhorcadoModel:
     def __init__(self):
-        # 7 palabras para este avance del proyecto
-        self.lista_palabras = ["SOFTWARE", "LOGICA", "PROGRAMACION", "UIDE", "CODIGO", "INGENIERIA", "VARIABLE, SISTEMAS"]
+        # 7 palabras del proyecto
+        self.lista_palabras = ["SOFTWARE", "LOGICA", "PROGRAMACION", "UIDE", "CODIGO", "INGENIERIA", "VARIABLE"]
         self.palabra_secreta = random.choice(self.lista_palabras)
         self.vidas_restantes = 7
         self.letras_adivinadas = []
@@ -37,14 +37,100 @@ class AhorcadoModel:
 # =====================================================================
 
 class AhorcadoView:
+    def __init__(self):
+        # Contenedor de estados indexado directamente por las vidas restantes (0 a 7)
+        self.estados_ahorcado = [
+            # 0 vidas: Juego Terminado (Monigote completo)
+            r"""
+               +---+
+               |   |
+               O   |
+              /|\  |
+              / \  |
+                   |
+            =========
+            """,
+            # 1 vida restante: Cuerpo casi completo (Falta una pierna)
+            r"""
+               +---+
+               |   |
+               O   |
+              /|\  |
+              /    |
+                   |
+            =========
+            """,
+            # 2 vidas restantes: Torso y extremidades superiores completas
+            r"""
+               +---+
+               |   |
+               O   |
+              /|\  |
+                   |
+                   |
+            =========
+            """,
+            # 3 vidas restantes: Cabeza, torso y un brazo
+            r"""
+               +---+
+               |   |
+               O   |
+              /|   |
+                   |
+                   |
+            =========
+            """,
+            # 4 vidas restantes: Cabeza y línea del torso
+            r"""
+               +---+
+               |   |
+               O   |
+               |   |
+                   |
+                   |
+            =========
+            """,
+            # 5 vidas restantes: Aparece la cabeza del monigote
+            r"""
+               +---+
+               |   |
+               O   |
+                   |
+                   |
+                   |
+            =========
+            """,
+            # 6 vidas restantes: Estructura de la horca vacía
+            r"""
+               +---+
+               |   |
+                   |
+                   |
+                   |
+                   |
+            =========
+            """,
+            # 7 vidas restantes: Estado inicial de la partida
+            r"""
+               +---+
+                   |
+                   |
+                   |
+                   |
+                   |
+            =========
+            """
+        ]
     def mostrar_estado_actual(self, palabra_secreta, letras_adivinadas, vidas, intentadas):
         print("\n" + "="*40)
+        print(self.estados_ahorcado[vidas])
+        
         progreso = [letra if letra in letras_adivinadas else "_" for letra in palabra_secreta]
         print(f"Palabra a adivinar: {' '.join(progreso)}")
         print(f"Vidas restantes: {vidas}")
         print(f"Letras intentadas: {', '.join(intentadas) if intentadas else 'Ninguna'}")
         print("="*40)
-
+        
     def mostrar_mensaje_victoria(self, palabra):
         print(f"\n¡FELICITACIONES! Has ganado. La palabra era: {palabra}")
 
